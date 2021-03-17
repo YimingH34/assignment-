@@ -1,15 +1,13 @@
 input.onButtonPressed(Button.A, function () {
-    if (y <= 4) {
-        for (let index = 0; index < 5; index++) {
-            y += 1
-            if (x <= 4) {
-                for (let index = 0; index < 5; index++) {
-                    x += 1
-                    led.plot(x, y)
-                    basic.pause(100)
-                }
-                x = -1
+    while (y <= 4) {
+        while (x <= 4) {
+            for (let index = 0; index < 5; index++) {
+                led.plot(x, y)
+                basic.pause(100)
+                x += 1
             }
+            x = 0
+            y += 1
         }
     }
 })
@@ -23,8 +21,8 @@ input.onGesture(Gesture.Shake, function () {
 })
 let y = 0
 let x = 0
-x = -1
-y = -1
+x = 0
+y = 0
 basic.forever(function () {
 	
 })
